@@ -4,30 +4,28 @@
 
   <ul>
     <li v-for="foto of fotos">
-      <img :src="foto.url" :alt="foto.titulo">
-      </li>
+        <img :src="foto.url" :alt="foto.titulo">
+    </li>
   </ul>
 </div>
 </template>
 <script>
 export default {
 
-     data(){
+  data(){
      
-      return{
-        Titulo: "Alurapic",
+    return{
+      Titulo: "Alurapic",
 
-        fotos: [
-          {
-            url: 'https://folhago.com.br/blogs/my-pet/wp-content/uploads/2021/11/Design-sem-nome-22.png',
-            titulo: 'cachorro cururu'
-          },
-          {
-            url: 'https://folhago.com.br/blogs/my-pet/wp-content/uploads/2021/11/Design-sem-nome-22.png',
-            titulo: 'cururu cachorro'
-          }
-        ]
-     }
+      fotos: []
+    }
+  },
+
+  created(){
+
+    this.$http.get('http://localhost:3000/v1/fotos')
+      .then(res => res.json())
+      .then(fotos => this.fotos = fotos, err => console.log(err))
   }
 }
 </script>
