@@ -16,7 +16,6 @@ export default {
      
     return{
       Titulo: "Alurapic",
-
       fotos: []
     }
   },
