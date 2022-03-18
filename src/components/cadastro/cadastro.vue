@@ -1,5 +1,5 @@
 <template>
-    <h2 class="centralizado">Cadstro</h2>
+    <h2 class="centralizado">Cadastro</h2>
 </template>
 <script>
 
